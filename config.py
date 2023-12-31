@@ -38,7 +38,7 @@ class Config(object):
     DEFAULT_BANNER_PATH = os.environ.get('DEFAULT_BANNER_PATH') or None
     DEFAULT_FAVICON = os.environ.get('DEFAULT_FAVICON') or None
     WEBHOOK_SECRET = os.environ.get('WEBHOOK_SECRET') or 'bananas'
-    SITE_NAME = os.environ.get('SITE_NAME') or 'Flask Writer'
+    SITE_NAME = os.environ.get('SITE_NAME') or 'Flask P2P Digital Market'
     SUBSCRIBE_BANNER_SHOW = bool(os.environ.get('SUBSCRIBE_BANNER_SHOW')) or False
     SUBSCRIBE_CTA = os.environ.get('SUBSCRIBE_CTA') or 'Join the newsletter!'
     SUBSCRIBE_CTA_IMAGE = os.environ.get('SUBSCRIBE_CTA_IMAGE') 
