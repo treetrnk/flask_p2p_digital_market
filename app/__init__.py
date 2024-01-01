@@ -56,7 +56,7 @@ def create_app(config_class=Config):
             mail_handler = SMTPHandler(
                 mailhost=(app.config['MAIL_SERVER'], app.config['MAIL_PORT']),
                 fromaddr='no-reply@' + app.config['MAIL_SERVER'],
-                toaddrs=app.config['ADMINS'], subject='Microblog Failure',
+                toaddrs=app.config['ADMINS'], subject='P2P Digital Market Failure',
                 credentials=auth, secure=secure)
             mail_handler.setLevel(logging.ERROR)
             app.logger.addHandler(mail_handler)
@@ -68,7 +68,7 @@ def create_app(config_class=Config):
         else:
             if not os.path.exists('textlogs'):
                 os.mkdir('textlogs')
-            file_handler = RotatingFileHandler('textlogs/flask_writer.log',
+            file_handler = RotatingFileHandler('textlogs/flask_p2p_digital_market.log',
                                        maxBytes=102400, backupCount=10)
             file_handler.setFormatter(logging.Formatter(
                     '%(asctime)s|%(levelname)s|%(pathname)s:%(lineno)d|'
@@ -76,7 +76,7 @@ def create_app(config_class=Config):
             file_handler.setLevel(logging.INFO)
             app.logger.addHandler(file_handler)
 
-            error_file_handler = RotatingFileHandler('textlogs/flask_writer_errors.log',
+            error_file_handler = RotatingFileHandler('textlogs/flask_p2p_digital_market.log',
                 maxBytes=10240, backupCount=5)
             error_file_handler.setFormatter(logging.Formatter(
                 '%(asctime)s|%(levelname)s'
@@ -85,7 +85,7 @@ def create_app(config_class=Config):
             app.logger.addHandler(error_file_handler)
 
         app.logger.setLevel(logging.INFO)
-        app.logger.info('Flask Writer startup')
+        app.logger.info('Flask P2P Digital Market startup')
 
     return app
 

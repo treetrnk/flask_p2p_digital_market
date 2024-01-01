@@ -1,5 +1,5 @@
 from app import create_app, db
-from app.models import User, Page, Tag, Subscriber, Definition, Link, Product, Record, Comment
+from app.models import User, Alias, Listing, Product, Order #, install
 from datetime import datetime
 
 app = create_app()
@@ -12,15 +12,11 @@ def inject_now():
 def make_shell_context():
     return {'db': db, 
             'User': User, 
-            'Page': Page, 
-            'Tag': Tag, 
-            'Subscriber': Subscriber,
-            'Definition': Definition,
-            'Link': Link,
+            'Alias': Alias, 
+            'Listing': Listing, 
             'Product': Product,
-            'Record': Record,
-            'Comment': Comment,
-            'install': install,
+            'Order': Order,
+            #'install': install,
         }
 
 #@app.before_first_request
